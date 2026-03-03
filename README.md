@@ -11,10 +11,9 @@ The Ultimate Sinhala Language Toolkit for Developers. A lightweight, high-perfor
 - **Billing Ready:** Perfect for invoice generation, banking apps, and receipt printing.
 - **Fast & Light:** Zero dependencies.
 
-## 📦 Installation
-```bash
-npm install st-sinhala-util
-🚀 How to Use
+
+## 🚀 How to Use .
+
 JavaScript
 const { numberToSinhala } = require('st-sinhala-util');
 
@@ -24,3 +23,7 @@ console.log(numberToSinhala(1250));
 Feel free to open an Issue if you find any bugs or have suggestions for new features!
 
 Built with ❤️ by ST-Imagix
+## 📦 Installation
+```bash
+npm install st-sinhala-util
+
