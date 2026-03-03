@@ -9,6 +9,7 @@ A lightweight, high-performance JavaScript utility library designed specifically
 - **Billing Ready:** Perfect for invoice generation, banking apps, and receipt printing.
 - **Fast & Light:** Zero dependencies.
 
+try demo :  https://st-imagix.github.io/st-sinhala-util/
 ## 📦 Installation
 ```bash
 npm install st-sinhala-util
