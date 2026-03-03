@@ -1,1 +1,59 @@
 
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <title>ST-Sinhala-Util Demo</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #f4f4f9; }
+        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; font-size: 1.2rem; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px; }
+        .result { font-size: 1.5rem; color: #007bff; font-weight: bold; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>ST-Sinhala-Util Demo</h1>
+        <p>ඉලක්කමක් ඇතුළත් කරන්න:</p>
+        <input type="number" id="numInput" placeholder="Ex: 1500" oninput="convert()">
+        <div class="result" id="output">බිංදුවයි</div>
+    </div>
+
+    <script>
+        // අපේ logic එක මෙතැනට සරලව ඇතුළත් කරමු
+        const units = ['', 'එක', 'දෙක', 'තුන', 'හතර', 'පහ', 'හය', 'හත', 'අට', 'නවය'];
+        const teens = ['දහය', 'එකොළහ', 'දොළහ', 'දහතුන', 'දාහතර', 'පහළොව', 'දහසය', 'දහහත', 'දහඅට', 'දහනවය'];
+        const tens = ['', 'දහය', 'විස්ස', 'තිහ', 'හතළිහ', 'පනහ', 'හැට', 'හැත්තෑව', 'අසූව', 'අනූව'];
+
+        function convert() {
+            let num = document.getElementById('numInput').value;
+            let output = document.getElementById('output');
+            if (!num || num == 0) { output.innerText = 'බිංදුවයි'; return; }
+            
+            let val = parseInt(num);
+            let res = "";
+
+            if (Math.floor(val / 1000) > 0) {
+                let th = Math.floor(val / 1000);
+                res += (th === 1 ? 'එක්' : units[th]) + 'දහස් ';
+                val %= 1000;
+            }
+            if (Math.floor(val / 100) > 0) {
+                let h = Math.floor(val / 100);
+                res += (h === 1 ? 'එක්' : units[h]) + 'සිය ';
+                val %= 100;
+            }
+            if (val > 0) {
+                if (val < 10) res += units[val];
+                else if (val < 20) res += teens[val - 10];
+                else {
+                    res += tens[Math.floor(val / 10)];
+                    if (val % 10 > 0) res += ' ' + units[val % 10];
+                }
+            }
+            output.innerText = res.trim() + 'යි';
+        }
+    </script>
+</body>
+</html>
