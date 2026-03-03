@@ -19,10 +19,11 @@ The Ultimate Sinhala Language Toolkit for Developers. 🚀
 
 try demo :  https://st-imagix.github.io/st-sinhala-util/
 
+If you find a bug or have a suggestion, please open an Issue on GitHub.
+
 
 ## 📦 Installation
 ```bash
 npm install st-sinhala-util
 
 
-If you find a bug or have a suggestion, please open an Issue on GitHub.
